@@ -1,7 +1,7 @@
 class GitNotes < Formula
   desc "NotePad based on github, uses no ram or rom :)"
   homepage "https://github.com/varshitrajput"
-  url "https://example.com/path/to/your/package/releases/download/v1.0/myterminal-1.0.tar.gz"
+  url "https://github.com/varshitrajput/GitNotes-CLI/archive/refs/tags/Alpha.tar.gz"
   sha256 "your-sha256-hash"
 
   def install
