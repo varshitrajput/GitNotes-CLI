@@ -2,7 +2,7 @@ class GitNotes < Formula
   desc "NotePad based on github, uses no ram or rom :)"
   homepage "https://github.com/varshitrajput"
   url "https://github.com/varshitrajput/GitNotes-CLI/archive/refs/tags/Alpha.tar.gz"
-  sha256 "your-sha256-hash"
+  sha256 "6c25c0b1cff41eedc5b0b83b6cb61bddc17e79eee3b58c51a308106c54947544"
 
   def install
     # No need to install anything
