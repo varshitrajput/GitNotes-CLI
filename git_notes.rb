@@ -3,17 +3,16 @@ class GitNotes < Formula
   homepage "https://github.com/varshitrajput"
   url "https://github.com/varshitrajput/GitNotes-CLI/archive/refs/tags/Alpha.tar.gz"
   sha256 "6c25c0b1cff41eedc5b0b83b6cb61bddc17e79eee3b58c51a308106c54947544"
+  version "0.0.1"  # Make sure to define the version attribute
+
 
   def install
-    # No need to install anything
-  end
-
-  def post_install
+    puts "Installing GitNotes-CLI..."
     modify_zshrc
   end
 
   def modify_zshrc
-    zshrc_path = "#{ENV["HOME"]}/.zshrc"
+    zshrc_path = File.join(Dir.home, ".zshrc")
     content = <<~EOS
       alias create_new_note='new_note'
       alias save_notes='save_note'
@@ -28,10 +27,11 @@ class GitNotes < Formula
       }
     EOS
 
-    File.open(zshrc_path, "a") { |f| f.puts(content) } unless File.read(zshrc_path).include?(content)
-  end
-
-  test do
-    # Add some test code if needed
+    if File.read(zshrc_path).include?(content)
+      puts "Already Installed"
+    else
+      File.open(zshrc_path, "a") { |f| f.puts(content) } 
+      puts "Installed"
+    end
   end
 end
